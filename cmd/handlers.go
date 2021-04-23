@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/schema"
-	"github.com/mayankshah1607/flagger-slack-handler/pkg/slack"
+	"github.com/grofers/flagger-slack-handler/pkg/slack"
 )
 
 func decodeSlackRequest(r *http.Request, s *slack.Request) error {

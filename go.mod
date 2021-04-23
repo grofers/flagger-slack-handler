@@ -1,4 +1,4 @@
-module github.com/mayankshah1607/flagger-slack-handler
+module github.com/grofers/flagger-slack-handler
 
 go 1.15
 
