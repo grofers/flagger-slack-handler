@@ -31,6 +31,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	// mark request as recieved
+
+	w.Write([]byte(err.Error()))
+	w.WriteHeader(http.StatusOK)
 
 	// TODO: Add checks for username and channel
 
@@ -44,6 +48,4 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		_ = slack.SendSlackRespnose(slackReq.ResponseURL, responseMessage)
 		return
 	}
-	w.Write([]byte(err.Error()))
-	w.WriteHeader(http.StatusOK)
 }
