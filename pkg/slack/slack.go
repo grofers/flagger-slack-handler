@@ -90,7 +90,7 @@ func PerformAction(s *Request, loadTesterNs string) error {
 		}
 		return nil
 	case rollback:
-		err := flagger.Rollback(cmd.CanaryName, cmd.CanaryNamespace, loadTesterNs)
+		err := flagger.Rollback(cmd.CanaryName, cmd.CanaryNamespace, loadTesterNs, 5)
 		if err != nil {
 			return fmt.Errorf("failed to rollback: %s", err.Error())
 		}

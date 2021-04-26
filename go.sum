@@ -215,6 +215,8 @@ github.com/mattn/go-isatty v0.0.3/go.mod h1:M+lRXTBqGeGNdLjl/ufCoiOlB5xdOkqRJdNx
 github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5Ld7szi9bcBfOoFv/3dc6xSMkL2PC0=
 github.com/mayankshah1607/kubectl-flagger v0.0.0-20210420060344-6e39a2ba3816 h1:Q/D4KPbBQmSF8oH7a4PdDKkV08qoFkHNaGFKGvJUVXc=
 github.com/mayankshah1607/kubectl-flagger v0.0.0-20210420060344-6e39a2ba3816/go.mod h1:uV7rKJEkTLJq2arTZqdl5Q9N5ZTIcvATMcpLwyqtBxc=
+github.com/mayankshah1607/kubectl-flagger v0.0.0-20210426064614-c1eaa079efca h1:BiPpcudgAq4QnieMSOJZdIqWaYUC+UbkvFrTi43ZHAU=
+github.com/mayankshah1607/kubectl-flagger v0.0.0-20210426064614-c1eaa079efca/go.mod h1:uV7rKJEkTLJq2arTZqdl5Q9N5ZTIcvATMcpLwyqtBxc=
 github.com/miekg/dns v1.0.14/go.mod h1:W1PPwlIAgtquWBMBEV9nkV9Cazfe8ScdGz/Lj7v3Nrg=
 github.com/mitchellh/cli v1.0.0/go.mod h1:hNIlj7HEI86fIcpObd7a0FcrxTWetlwJDGcceTlRvqc=
 github.com/mitchellh/go-homedir v1.0.0/go.mod h1:SfyaCUpYCn1Vlf4IUYiD9fPX4A5wJrkLzIz1N1q0pr0=
