@@ -78,7 +78,7 @@ func PerformAction(s *Request, loadTesterNs string) error {
 		}
 		return nil
 	case promote:
-		err := flagger.Promote(cmd.CanaryName, cmd.CanaryNamespace, loadTesterNs, 3)
+		err := flagger.Promote(cmd.CanaryName, cmd.CanaryNamespace, loadTesterNs, 5)
 		if err != nil {
 			return fmt.Errorf("failed to promote: %s", err.Error())
 		}
