@@ -83,7 +83,7 @@ func PerformAction(s *Request, loadTesterNs string) error {
 			return fmt.Errorf("failed to promote: %s", err.Error())
 		}
 		responseMessage := fmt.Sprintf("<@%s> *successfully promoted* `%s/canary/%s`",
-			s.UserID, cmd.CanaryName, cmd.CanaryNamespace)
+			s.UserID, cmd.CanaryNamespace, cmd.CanaryName)
 		err = SendSlackRespnose(s.ResponseURL, responseMessage)
 		if err != nil {
 			log.Printf("failed to send slack response: %s\n", err.Error())
@@ -95,7 +95,7 @@ func PerformAction(s *Request, loadTesterNs string) error {
 			return fmt.Errorf("failed to rollback: %s", err.Error())
 		}
 		responseMessage := fmt.Sprintf("<@%s> *successfully rolledback* `%s/canary/%s`",
-			s.UserID, cmd.CanaryName, cmd.CanaryNamespace)
+			s.UserID, cmd.CanaryNamespace, cmd.CanaryName)
 		err = SendSlackRespnose(s.ResponseURL, responseMessage)
 		if err != nil {
 			log.Printf("failed to send slack response: %s\n", err.Error())
