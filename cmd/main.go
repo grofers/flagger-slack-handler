@@ -36,7 +36,7 @@ func main() {
 		Handler:      loggedRouter,
 	}
 
-	log.Printf("Starting fmw server on port %s", port)
+	log.Printf("Starting server on port %s", port)
 	log.Printf("Passing gating instructions to `flagger-loadtester` in `namespace/%s`\n", loadTesterNs)
 	go func() {
 		if err := srv.ListenAndServe(); err != nil {
