@@ -15,6 +15,7 @@ spec:
       labels:
         app: flagger-slack-handler
     spec:
+      serviceAccountName: flagger-slack-handler-sa
       containers:
       - args:
         - -loadtester-namespace=ci
