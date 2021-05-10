@@ -23,29 +23,30 @@ func decodeSlackRequest(r *http.Request, s *slack.Request) error {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
+
 	slackReq := &slack.Request{}
 	err := decodeSlackRequest(r, slackReq)
 	if err != nil {
 		log.Println(err.Error())
-		w.Write([]byte(err.Error()))
-		w.WriteHeader(http.StatusBadRequest)
-		return
-	}
-	// mark request as recieved
-
-	w.Write([]byte(err.Error()))
-	w.WriteHeader(http.StatusOK)
-
-	// TODO: Add checks for username and channel
-
-	err = slack.PerformAction(slackReq, loadTesterNs)
-	if err != nil {
-		log.Println(err.Error())
-		w.Write([]byte(err.Error()))
-		w.WriteHeader(http.StatusInternalServerError)
 		responseMessage := fmt.Sprintf("<@%s> Looks like there was an issue with your action: %s",
 			slackReq.UserID, err.Error())
 		_ = slack.SendSlackRespnose(slackReq.ResponseURL, responseMessage)
 		return
 	}
+
+	// mark request as recieved
+	w.WriteHeader(http.StatusOK)
+
+	// TODO: Add checks for username and channel
+
+	go func() {
+		err = slack.PerformAction(slackReq, loadTesterNs)
+		if err != nil {
+			log.Println(err.Error())
+			responseMessage := fmt.Sprintf("<@%s> Looks like there was an issue with your action: %s",
+				slackReq.UserID, err.Error())
+			_ = slack.SendSlackRespnose(slackReq.ResponseURL, responseMessage)
+			return
+		}
+	}()
 }
