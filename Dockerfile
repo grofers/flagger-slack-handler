@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine as builder
+FROM public.ecr.aws/zomato/golang:1.15-alpine as builder
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ COPY pkg/ pkg/
 RUN CGO_ENABLED=0 go build \
     -a -o flagger ./cmd
 
-FROM alpine:3.13
+FROM public.ecr.aws/zomato/alpine:3.13
 
 RUN apk --no-cache add ca-certificates
 
